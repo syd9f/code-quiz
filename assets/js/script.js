@@ -3,7 +3,9 @@
 // Function for creating a countdown timer
 
 // Event listener to start button to begin timer/first question
-
+var timerStart = document.querySelector(".button");
+var timer = document.querySelector("#timer");
+// timerStart.addEventListener("click", function())
 // QUESTIONS
 
 // Function for creating first question form
