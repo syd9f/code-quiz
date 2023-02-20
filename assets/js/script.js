@@ -1,22 +1,21 @@
 var buttonClick = document.querySelector(".button"); // Select Button
-var timerSet = document.querySelector("#timer"); // Select Timer
+var timerSet = document.querySelector("timer"); // Select Timer
 
 // Timer that counts down from 30 once start button is clicked 
-// (add code that decreases 5 seconds every time wrong answer is selected)
+// (need to add code that decreases 5 seconds every time wrong answer is selected)
 function timeRemaining() {
     var timeLeft = 30; // Set starting time
 
-    var timerInterval = setInterval(function() {
-
+    var timerInterval = setInterval(function(event) {
         if (timeLeft > 1) {
             timerSet.textContent = timeLeft + ' seconds remaining';
-            timeLeft--
+            timeLeft--;
          } else if(timeLeft === 1) {
             timerSet.textContent = timeLeft + ' second remaining';
             timeLeft--;
          } else {
             timerSet.textContent = '';
-            clearInterval(timerInterval)
+            clearInterval(timerInterval);
             // Create a function to display message that time has run out below this function
             // sendMessage();
          }

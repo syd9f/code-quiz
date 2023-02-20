@@ -41,12 +41,15 @@ p {
     padding: 10px;
 }
 
-#timer {
+#time {
     color: white;
     border: 1px double black;
     font-size: 40px;
     font-style:italic;
     background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 button {
