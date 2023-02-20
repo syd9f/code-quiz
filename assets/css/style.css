@@ -1,3 +1,8 @@
+* {
+    --pink: rgba(255, 0, 0, 0.288);
+    --ltpurple: rgba(137, 43, 226, 0.223);
+}
+
 body {
     background-color: black;
 }
@@ -10,7 +15,7 @@ header {
 
 h1 {
     font-size: 80px;
-    background-color:rgba(255, 0, 0, 0.288);
+    background-color:var(--pink);
     border: 1px solid black;
     padding: 20px;
     color: white;
@@ -18,7 +23,7 @@ h1 {
 
 h2 {
     font-size: 40px;
-    background-color:rgba(137, 43, 226, 0.223);
+    background-color:var(--ltpurple);
     color: black;
     padding: 10px;
     border: 1px solid black;
@@ -38,7 +43,7 @@ button {
     margin: 5px;
 }
 
-button::hover {
+button:hover {
     color: purple;
     background-color: pink;
 }
