@@ -5,6 +5,9 @@
 
 body {
     background-color: black;
+    border: 25px solid var(--pink);
+    margin: 0px;
+    padding: 5px;
 }
 
 header {
@@ -50,7 +53,7 @@ button:hover {
 
 main {
     border: 5px double black;
-    margin: 15%;
+    margin: 10%;
     padding: 20px;
     display: flex;
     justify-content: center;
