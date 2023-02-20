@@ -32,9 +32,21 @@ h2 {
     border: 1px solid black;
 }
 
+.timer-title{
+    color: white;
+}
+
 p {
     font-size: 25px;
     padding: 10px;
+}
+
+#timer {
+    color: white;
+    border: 1px double black;
+    font-size: 40px;
+    font-style:italic;
+    background-color: red;
 }
 
 button {
