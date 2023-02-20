@@ -1,3 +1,7 @@
+body {
+    background-color: black;
+}
+
 header {
     padding: 10px;
     display: flex;
@@ -6,7 +10,10 @@ header {
 
 h1 {
     font-size: 80px;
-    
+    background-color:rgba(255, 0, 0, 0.288);
+    border: 1px solid black;
+    padding: 20px;
+    color: white;
 }
 
 h2 {
@@ -43,6 +50,7 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    background-color: white;
 }
 
 #button {
