@@ -21,14 +21,19 @@ function timeRemaining() {
          }
     }, 1000);
 }
+
 // First question that appears when clicking start button
 function firstQuestion() {
  var question = document.querySelector(".main-title"); //Select h2 in main
    question.textContent = 'Test Question';
 }
 
+function firstClick() {
+   timeRemaining();
+   firstQuestion();
+}
 // Event Listener to click button to start timer
-buttonClick.addEventListener('click', timeRemaining);
+buttonClick.addEventListener('click', firstClick);
 
 
 
