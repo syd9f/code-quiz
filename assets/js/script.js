@@ -26,12 +26,25 @@ function timeRemaining() {
 function firstQuestion() {
  var question = document.querySelector(".main-title"); //Select h2 in main
    question.textContent = 'Test Question';
+   buttonClick.addEventListener('click', secondClick);
+}
+
+function secondQuestion() {
+   var question = document.querySelector(".main-title"); //Select h2 in main
+   question.textContent = 'Test Question 2';
 }
 
 function firstClick() {
    timeRemaining();
    firstQuestion();
+   this.removeEventListener('click', firstClick);
 }
+
+function secondClick() {
+   secondQuestion();
+   this.removeEventListener('click', secondClick);
+}
+
 // Event Listener to click button to start timer
 buttonClick.addEventListener('click', firstClick);
 
