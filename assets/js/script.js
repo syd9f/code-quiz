@@ -6,7 +6,7 @@ var timerSet = document.getElementById("timer"); // Select Timer
 function timeRemaining() {
     var timeLeft = 30; // Set starting time
 
-    var timerInterval = setInterval(function() {
+    var timerInterval = setInterval(function(event) {
         if (timeLeft > 1) {
             timerSet.textContent = timeLeft + ' seconds remaining';
             timeLeft--;
@@ -21,9 +21,16 @@ function timeRemaining() {
          }
     }, 1000);
 }
+// First question that appears when clicking start button
+function firstQuestion() {
+ var question = document.querySelector(".main-title"); //Select h2 in main
+   question.textContent = 'Test Question';
+}
 
 // Event Listener to click button to start timer
-buttonClick.addEventListener("click", timeRemaining());
+buttonClick.addEventListener('click', timeRemaining);
+
+
 
 
 // QUESTIONS
