@@ -1,5 +1,6 @@
 var buttonClick = document.querySelector(".button"); // Select Button
 var timerSet = document.getElementById("timer"); // Select Timer
+var options = document.querySelector(".options"); // Select ul in main
 
 // Timer that counts down from 30 once start button is clicked 
 // (need to add code that decreases 5 seconds every time wrong answer is selected)
@@ -25,7 +26,11 @@ function timeRemaining() {
 // First question that appears when clicking start button
 function firstQuestion() {
  var question = document.querySelector(".main-title"); //Select h2 in main
-   question.textContent = 'Test Question';
+ var optionOne = document.createElement('li')
+
+   question.textContent = '1: What does HTML stand for?';
+   optionOne.textContent = 'Hyper Text Markup Language';
+   options.appendChild(optionOne);
    buttonClick.addEventListener('click', secondClick);
 }
 // Second question appears after submitting first question
