@@ -21,19 +21,26 @@ function timeRemaining() {
          }
     }, 1000);
 }
-
+// QUESTIONS 1 - 5
 // First question that appears when clicking start button
 function firstQuestion() {
  var question = document.querySelector(".main-title"); //Select h2 in main
    question.textContent = 'Test Question';
    buttonClick.addEventListener('click', secondClick);
 }
-
+// Second question appears after submitting first question
 function secondQuestion() {
    var question = document.querySelector(".main-title"); //Select h2 in main
    question.textContent = 'Test Question 2';
+   buttonClick.addEventListener('click', thirdClick);
 }
 
+function thirdQuestion() {
+   var question = document.querySelector(".main-title"); //Select h2 in main
+   question.textContent = 'Test Question 3';
+}
+
+// Functions that contain what will happen on clicks in order
 function firstClick() {
    timeRemaining();
    firstQuestion();
@@ -45,6 +52,10 @@ function secondClick() {
    this.removeEventListener('click', secondClick);
 }
 
+function thirdClick() {
+   thirdQuestion();
+   this.removeEventListener('click', thirdClick);
+}
 // Event Listener to click button to start timer
 buttonClick.addEventListener('click', firstClick);
 
