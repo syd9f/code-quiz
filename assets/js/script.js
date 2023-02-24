@@ -1,12 +1,12 @@
 var buttonClick = document.querySelector(".button"); // Select Button
-var timerSet = document.querySelector("timer"); // Select Timer
+var timerSet = document.getElementById("timer"); // Select Timer
 
 // Timer that counts down from 30 once start button is clicked 
 // (need to add code that decreases 5 seconds every time wrong answer is selected)
 function timeRemaining() {
     var timeLeft = 30; // Set starting time
 
-    var timerInterval = setInterval(function(event) {
+    var timerInterval = setInterval(function() {
         if (timeLeft > 1) {
             timerSet.textContent = timeLeft + ' seconds remaining';
             timeLeft--;
