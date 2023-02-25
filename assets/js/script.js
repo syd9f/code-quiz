@@ -110,6 +110,7 @@ function thirdQuestion() {
 }
 
 // Functions that contain what will happen on clicks in order
+// Start button is clicked
 function firstClick() {
    timerSet.style.display = 'block';
    buttonClick.style.display ='none';
@@ -119,22 +120,27 @@ function firstClick() {
    firstQuestion();
 }
 
+// First Question answered correctly
 function secondClick() {
    secondQuestion();
    this.removeEventListener('click', secondClick);
 }
 
+// Second Question answered correctly
 function thirdClick() {
    thirdQuestion();
    this.removeEventListener('click', thirdClick);
 }
 
+// Third Question answered correctly
 function fourthClick() {
    // timerSet.textContent = '';
    // clearInterval(timerInterval);
    timerSet.style.display = 'none';
+   mainText.style.display = 'block';
    mainTitle.textContent = 'Save your score:';
    options.style.display ='none';
+   mainText.textContent = 'Score: 100%';
 }
 
 // Event Listener to click button to start timer
