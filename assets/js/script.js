@@ -1,11 +1,11 @@
+// Declare variables to select elements on page
 var buttonClick = document.querySelector(".start"); // Select Button
 var timerSet = document.getElementById("timer"); // Select Timer
 var options = document.querySelector(".options"); // Select ul in main
 
-// Timer that counts down from 30 once start button is clicked 
-// (need to add code that decreases 5 seconds every time wrong answer is selected)
+// Timer that counts down from 60 once start button is clicked 
 function timeRemaining() {
-    var timeLeft = 30; // Set starting time
+    var timeLeft = 60; // Set starting time
 
     var timerInterval = setInterval(function(event) {
         if (timeLeft > 1) {
@@ -17,30 +17,35 @@ function timeRemaining() {
          } else {
             timerSet.textContent = '';
             clearInterval(timerInterval);
-            // Create a function to display message that time has run out below this function
             sendMessage();
          }
     }, 1000);
 }
 
+// Message that appears when time has run out
 function sendMessage() {
    timerSet.textContent = 'No time left!'
 }
+
 // QUESTIONS 1 - 5
 // First question that appears when clicking start button
 function firstQuestion() {
  var question = document.querySelector(".main-title"); //Select h2 in main
  var optionOne = document.createElement('li');
  var optionTwo = document.createElement('li');
+ var optionThree = document.createElement('li');
 
    question.textContent = '1: What does HTML stand for?';
    optionOne.textContent = 'Hyper Text Markup Language';
    optionTwo.textContent = 'Hyper Text Marketing Language';
+   optionThree.textContent = 'Hyper Tool Markup Language';
 
    options.appendChild(optionOne);
    options.appendChild(optionTwo);
+   options.appendChild(optionThree);
    buttonClick.addEventListener('click', secondClick);
 }
+
 // Second question appears after submitting first question
 function secondQuestion() {
    var question = document.querySelector(".main-title"); //Select h2 in main
