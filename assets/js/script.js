@@ -8,9 +8,9 @@ var mainTitle = document.querySelector('.main-title'); // select h2 in main
 // Hide timer on page load
 timerSet.style.display = 'none';
 
-// Timer that counts down from 60 once start button is clicked 
+// Timer that counts down from 30 once start button is clicked 
 function timeRemaining() {
-    var timeLeft = 60; // Set starting time
+    var timeLeft = 30; // Set starting time
 
     var timerInterval = setInterval(function(event) {
         if (timeLeft > 1) {
@@ -34,7 +34,7 @@ function sendMessage() {
    timerSet.textContent = 'No time left!'
 }
 
-// QUESTIONS 1 - 5
+// QUESTIONS 1 - 3
 // First question that appears when clicking start button
 function firstQuestion() {
    // create 4 option buttons and assign class attributes
@@ -136,5 +136,6 @@ function fourthClick() {
    mainTitle.textContent = 'Save your score:';
    options.style.display ='none';
 }
+
 // Event Listener to click button to start timer
 buttonClick.addEventListener('click', firstClick);
