@@ -36,15 +36,18 @@ function firstQuestion() {
  var optionOne = document.createElement('button');
  var optionTwo = document.createElement('button');
  var optionThree = document.createElement('button');
+ var optionFour = document.createElement('button');
 
    question.textContent = '1: What does HTML stand for?';
    optionOne.textContent = 'Hyper Text Markup Language';
    optionTwo.textContent = 'Hyper Text Marketing Language';
    optionThree.textContent = 'Hyper Tool Markup Language';
+   optionFour.textContent = 'Anotha one'
 
    options.appendChild(optionOne);
    options.appendChild(optionTwo);
    options.appendChild(optionThree);
+   options.appendChild(optionFour);
    buttonClick.addEventListener('click', secondClick);
 }
 
