@@ -4,13 +4,18 @@ var timerSet = document.getElementById("timer"); // Select Timer
 var options = document.querySelector(".options"); // Select ul in main
 var mainText = document.querySelector('.main-text'); //select p in main
 var mainTitle = document.querySelector('.main-title'); // select h2 in main
-
+// declare variables for keeping score
+var score = 0; // set starting score as 0
+function displayScore() {
+   var finalScore = math.round((100 * score) / 3);
+   mainText.textContent = 'Score: ' + finalScore;
+}
 // Hide timer on page load
 timerSet.style.display = 'none';
 
 // Timer that counts down from 30 once start button is clicked 
 function timeRemaining() {
-    var timeLeft = 30; // Set starting time
+    var timeLeft = 3; // Set starting time
 
     var timerInterval = setInterval(function(event) {
         if (timeLeft > 1) {
@@ -25,6 +30,8 @@ function timeRemaining() {
             sendMessage();
             mainTitle.textContent = 'Save your score:';
             options.style.display ='none';
+            mainText.style.display ='block';
+            displayScore();
          }
     }, 1000);
 }
@@ -122,25 +129,31 @@ function firstClick() {
 // First Question answered correctly
 function secondClick() {
    secondQuestion();
+   score++;
    this.removeEventListener('click', secondClick);
+   console.log('current score: ' + score + '/3');
 }
 
 // Second Question answered correctly
 function thirdClick() {
    thirdQuestion();
+   score++;
    this.removeEventListener('click', thirdClick);
+   console.log('current score: ' + score + '/3');
 }
 
 // Third Question answered correctly
 function fourthClick() {
-   // timerSet.textContent = '';
-   // clearInterval(timerInterval);
+   score++;
    timerSet.style.display = 'none';
    mainText.style.display = 'block';
-   mainTitle.textContent = 'Save your score:';
    options.style.display ='none';
-   mainText.textContent = 'Score: 100%';
-}
+   mainTitle.textContent = 'Save your score:';
 
+   // mainText.append = scorePercentage();
+   console.log('current score: ' + score + '/3');
+
+   displayScore();
+}
 // Event Listener to click button to start timer
 buttonClick.addEventListener('click', firstClick);
