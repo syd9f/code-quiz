@@ -83,9 +83,16 @@ main {
     margin: 20px;
 }
 
-.time button {
+.options button {
     border: 1px solid black;
     padding: 4px;
     margin: 2%;
     background-color: azure;
+    color: black;
+}
+
+.options button:hover {
+    border: 1px solid black;
+    color: white;
+    background-color: darkolivegreen;
 }
