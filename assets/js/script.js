@@ -5,10 +5,12 @@ var options = document.querySelector(".options"); // Select ul in main
 var mainText = document.querySelector('.main-text'); //select p in main
 var mainTitle = document.querySelector('.main-title'); // select h2 in main
 
+// Hide timer on page load
 timerSet.style.display = 'none';
+
 // Timer that counts down from 60 once start button is clicked 
 function timeRemaining() {
-    var timeLeft = 10; // Set starting time
+    var timeLeft = 60; // Set starting time
 
     var timerInterval = setInterval(function(event) {
         if (timeLeft > 1) {
@@ -45,7 +47,7 @@ function firstQuestion() {
    var optionFour = document.createElement('button');
       optionFour.setAttribute("class","fourth");
 
-   //  set button + title text content
+   //  set text content
    mainTitle.textContent = '1: What does HTML stand for?';
    optionOne.textContent = 'Hyper Text Markup Language';
    optionTwo.textContent = 'Hyper Text Marketing Language';
@@ -62,14 +64,14 @@ function firstQuestion() {
    optionOne.addEventListener('click', secondClick);
 }
 
-// Second question appears after submitting first question
+// Second question appears after correctly answering first question
 function secondQuestion() {
    // refer to option buttons
    var optionOne = document.querySelector(".first");
    var optionTwo = document.querySelector(".second");
    var optionThree = document.querySelector(".third");
    var optionFour = document.querySelector(".fourth");
-   // set text content
+   // reset text content
    mainTitle.textContent = '2: Test Question 2';
    optionOne.textContent = 'Test Option 1';
    optionTwo.textContent = 'Test Option 2';
@@ -86,7 +88,25 @@ function secondQuestion() {
 
 // Third Question appears after submitting second question
 function thirdQuestion() {
-   mainTitle.textContent = 'Test Question 3';
+   // refer to option buttons
+   var optionOne = document.querySelector(".first");
+   var optionTwo = document.querySelector(".second");
+   var optionThree = document.querySelector(".third");
+   var optionFour = document.querySelector(".fourth");
+   // reset text content
+   mainTitle.textContent = '3: Test Question 3';
+   optionOne.textContent = 'Test Option 1 a';
+   optionTwo.textContent = 'Test Option 2a';
+   optionThree.textContent = 'Test Option 3a';
+   optionFour.textContent = 'Test Option 4a';
+   // display buttons in options section
+   options.appendChild(optionOne);
+   options.appendChild(optionTwo);
+   options.appendChild(optionThree);
+   options.appendChild(optionFour);
+   // assign event listeners to buttons
+   optionTwo.addEventListener('click',fourthClick);
+
 }
 
 // Functions that contain what will happen on clicks in order
@@ -108,18 +128,13 @@ function thirdClick() {
    thirdQuestion();
    this.removeEventListener('click', thirdClick);
 }
+
+function fourthClick() {
+   // timerSet.textContent = '';
+   // clearInterval(timerInterval);
+   timerSet.style.display = 'none';
+   mainTitle.textContent = 'Save your score:';
+   options.style.display ='none';
+}
 // Event Listener to click button to start timer
 buttonClick.addEventListener('click', firstClick);
-// event listener for correct answer #1
-
-
-
-
-
-// Event listener to submit first question/begin second question
-
-// Event listener to submit second question/begin third question
-
-// Event listener to 
-
-// GAME OVER: SAVE SCORE AND 
