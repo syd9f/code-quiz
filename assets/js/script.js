@@ -157,9 +157,9 @@ function secondClick() {
    console.log('current score: ' + score + '/3');
 }
 
-// First Question answered incorrectly
+// First Question answered incorrectly *NOT WORKING, STARTING NEW TIMER ON TOP OF OLD ONE
 function incorrectAnswer(){
-   var timeLeft = timeRemaining() - 5;
+   var timeLeft = timeRemaining(timeLeft) - 5;
    // timeLeft = timeLeft - 5;
 }
 
