@@ -18,9 +18,13 @@ function timeRemaining() {
             timerSet.textContent = '';
             clearInterval(timerInterval);
             // Create a function to display message that time has run out below this function
-            // sendMessage();
+            sendMessage();
          }
     }, 1000);
+}
+
+function sendMessage() {
+   timerSet.textContent = 'No time left!'
 }
 // QUESTIONS 1 - 5
 // First question that appears when clicking start button
