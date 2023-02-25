@@ -1,4 +1,4 @@
-var buttonClick = document.querySelector(".button"); // Select Button
+var buttonClick = document.querySelector(".start"); // Select Button
 var timerSet = document.getElementById("timer"); // Select Timer
 var options = document.querySelector(".options"); // Select ul in main
 
@@ -26,17 +26,22 @@ function timeRemaining() {
 // First question that appears when clicking start button
 function firstQuestion() {
  var question = document.querySelector(".main-title"); //Select h2 in main
- var optionOne = document.createElement('li')
+ var optionOne = document.createElement('li');
+ var optionTwo = document.createElement('li');
 
    question.textContent = '1: What does HTML stand for?';
    optionOne.textContent = 'Hyper Text Markup Language';
+   optionTwo.textContent = 'Hyper Text Marketing Language';
+
    options.appendChild(optionOne);
+   options.appendChild(optionTwo);
    buttonClick.addEventListener('click', secondClick);
 }
 // Second question appears after submitting first question
 function secondQuestion() {
    var question = document.querySelector(".main-title"); //Select h2 in main
    question.textContent = 'Test Question 2';
+   optionOne.textContent = 'Test Option 2';
    buttonClick.addEventListener('click', thirdClick);
 }
 
