@@ -34,7 +34,7 @@ timerSet.style.display = 'none';
 
 // Timer that counts down from 30 once start button is clicked 
 function timeRemaining() {
-   var timeLeft = 3; // Set starting time
+   var timeLeft = 30; // Set starting time
 
    var timerInterval = setInterval(function(event) {
       if (timeLeft > 1) {
@@ -88,6 +88,9 @@ function firstQuestion() {
 
    // assign event listeners for buttons
    optionOne.addEventListener('click', secondClick);
+   optionTwo.addEventListener('click',incorrectAnswer);
+   optionThree.addEventListener('click',incorrectAnswer);
+   optionFour.addEventListener('click',incorrectAnswer);
 }
 
 // Second question appears after correctly answering first question
@@ -152,6 +155,12 @@ function secondClick() {
    score++;
    this.removeEventListener('click', secondClick);
    console.log('current score: ' + score + '/3');
+}
+
+// First Question answered incorrectly
+function incorrectAnswer(){
+   var timeLeft = timeRemaining() - 5;
+   // timeLeft = timeLeft - 5;
 }
 
 // Second Question answered correctly
