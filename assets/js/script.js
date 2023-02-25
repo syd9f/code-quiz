@@ -1,55 +1,58 @@
 // Declare variables to select elements on page
-var buttonClick = document.querySelector(".start"); // Select Button
+var buttonClick = document.querySelector(".start"); // Select start Button
 var timerSet = document.getElementById("timer"); // Select Timer
 var options = document.querySelector(".options"); // Select ul in main
 var mainText = document.querySelector('.main-text'); //select p in main
 var mainTitle = document.querySelector('.main-title'); // select h2 in main
 var form = document.querySelector('.form'); // select form
+
+// SCORING----------------------------------------------
 // declare variable for keeping score
 var score = 0; // set starting score as 0
 
-// set function for calculating final score
+// calculate final score
 function displayScore() {
    var finalScore = Math.round((100 * score) / 3);
    mainText.textContent = 'Score: ' + finalScore + '%';
    submitScore();
 }
-
+// add submit button and user input to form
 function submitScore() {
    var submitButton = document.createElement('button');
       submitButton.setAttribute('class','submit-button');
    submitButton.textContent = 'Submit Score';
-   form.appendChild(submitButton)
-   // submitButton.addEventListener("click",saveScore);
+   form.appendChild(submitButton);
+   submitButton.addEventListener("click",saveScore);
 }
-
+// saves score and initials and displays on screen as most recent score
 function saveScore() {
-
+   console.log(score);
 }
+// TIMER-----------------------------------------------------
 // Hide timer on page load
 timerSet.style.display = 'none';
 
 // Timer that counts down from 30 once start button is clicked 
 function timeRemaining() {
-    var timeLeft = 3; // Set starting time
+   var timeLeft = 3; // Set starting time
 
-    var timerInterval = setInterval(function(event) {
-        if (timeLeft > 1) {
-            timerSet.textContent = timeLeft + ' seconds remaining';
-            timeLeft--;
-         } else if(timeLeft === 1) {
-            timerSet.textContent = timeLeft + ' second remaining';
-            timeLeft--;
-         } else {
-            timerSet.textContent = '';
-            clearInterval(timerInterval);
-            sendMessage();
-            mainTitle.textContent = 'Save your score:';
-            options.style.display ='none';
-            mainText.style.display ='block';
-            displayScore();
-         }
-    }, 1000);
+   var timerInterval = setInterval(function(event) {
+      if (timeLeft > 1) {
+         timerSet.textContent = timeLeft + ' seconds remaining';
+         timeLeft--;
+      } else if(timeLeft === 1) {
+         timerSet.textContent = timeLeft + ' second remaining';
+         timeLeft--;
+      } else {
+         timerSet.textContent = '';
+         clearInterval(timerInterval);
+         sendMessage();
+         mainTitle.textContent = 'Save your score:';
+         options.style.display ='none';
+         mainText.style.display ='block';
+         displayScore();
+      }
+   }, 1000);
 }
 
 // Message that appears when time has run out
@@ -57,7 +60,7 @@ function sendMessage() {
    timerSet.textContent = 'No time left!'
 }
 
-// QUESTIONS 1 - 3
+// QUESTIONS 1 - 3 --------------------------------------------------
 // First question that appears when clicking start button
 function firstQuestion() {
    // create 4 option buttons and assign class attributes
@@ -132,6 +135,7 @@ function thirdQuestion() {
 
 }
 
+// ON CLICK FUNCTIONS -------------------------------------------
 // Start button is clicked
 function firstClick() {
    timerSet.style.display = 'block';
@@ -166,7 +170,6 @@ function fourthClick() {
    options.style.display ='none';
    mainTitle.textContent = 'Save your score:';
 
-   // mainText.append = scorePercentage();
    console.log('current score: ' + score + '/3');
 
    displayScore();
