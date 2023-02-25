@@ -65,7 +65,9 @@ function firstClick() {
    timeRemaining();
    firstQuestion();
    timerSet.style.display = 'block';
+   buttonClick.style.display ='none';
    this.removeEventListener('click', firstClick);
+
 }
 
 function secondClick() {
