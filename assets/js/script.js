@@ -7,7 +7,7 @@ var mainTitle = document.querySelector('.main-title'); // select h2 in main
 // declare variables for keeping score
 var score = 0; // set starting score as 0
 function displayScore() {
-   var finalScore = math.round((100 * score) / 3);
+   var finalScore = Math.round((100 * score) / 3);
    mainText.textContent = 'Score: ' + finalScore;
 }
 // Hide timer on page load
