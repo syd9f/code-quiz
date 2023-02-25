@@ -32,9 +32,9 @@ function sendMessage() {
 // First question that appears when clicking start button
 function firstQuestion() {
  var question = document.querySelector(".main-title"); //Select h2 in main
- var optionOne = document.createElement('li');
- var optionTwo = document.createElement('li');
- var optionThree = document.createElement('li');
+ var optionOne = document.createElement('button');
+ var optionTwo = document.createElement('button');
+ var optionThree = document.createElement('button');
 
    question.textContent = '1: What does HTML stand for?';
    optionOne.textContent = 'Hyper Text Markup Language';

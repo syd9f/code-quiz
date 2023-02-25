@@ -85,7 +85,7 @@ main {
     background-color: black;
 }
 
-li {
+.timer button {
     border: 1px solid black;
     padding: 4px;
     margin: 2%;
