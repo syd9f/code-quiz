@@ -4,8 +4,11 @@ var timerSet = document.getElementById("timer"); // Select Timer
 var options = document.querySelector(".options"); // Select ul in main
 var mainText = document.querySelector('.main-text'); //select p in main
 var mainTitle = document.querySelector('.main-title'); // select h2 in main
-// declare variables for keeping score
+
+// declare variable for keeping score
 var score = 0; // set starting score as 0
+
+// set function for calculating final score
 function displayScore() {
    var finalScore = Math.round((100 * score) / 3);
    mainText.textContent = 'Score: ' + finalScore;
