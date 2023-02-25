@@ -109,7 +109,6 @@ function thirdQuestion() {
 
 }
 
-// Functions that contain what will happen on clicks in order
 // Start button is clicked
 function firstClick() {
    timerSet.style.display = 'block';
