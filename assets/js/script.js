@@ -2,6 +2,7 @@
 var buttonClick = document.querySelector(".start"); // Select Button
 var timerSet = document.getElementById("timer"); // Select Timer
 var options = document.querySelector(".options"); // Select ul in main
+var mainText = document.querySelector('.main-text'); //select p in main
 
 timerSet.style.display = 'none';
 // Timer that counts down from 60 once start button is clicked 
@@ -55,6 +56,7 @@ function secondQuestion() {
    buttonClick.addEventListener('click', thirdClick);
 }
 
+// Third Question appears after submitting second question
 function thirdQuestion() {
    var question = document.querySelector(".main-title"); //Select h2 in main
    question.textContent = 'Test Question 3';
@@ -66,6 +68,7 @@ function firstClick() {
    firstQuestion();
    timerSet.style.display = 'block';
    buttonClick.style.display ='none';
+   mainText.style.display ='none';
    this.removeEventListener('click', firstClick);
 
 }
@@ -85,17 +88,10 @@ buttonClick.addEventListener('click', firstClick);
 
 
 
-// QUESTIONS
-
-// Function for creating first question form
 
 // Event listener to submit first question/begin second question
 
-// Function for creating second question form
-
 // Event listener to submit second question/begin third question
-
-// Function for creating third question form
 
 // Event listener to 
 
