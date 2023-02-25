@@ -12,12 +12,19 @@ var score = 0; // set starting score as 0
 function displayScore() {
    var finalScore = Math.round((100 * score) / 3);
    mainText.textContent = 'Score: ' + finalScore + '%';
+   submitScore();
 }
 
 function submitScore() {
    var submitButton = document.createElement('button');
+      submitButton.setAttribute('class','submit-button');
    submitButton.textContent = 'Submit Score';
    form.appendChild(submitButton)
+   // submitButton.addEventListener("click",saveScore);
+}
+
+function saveScore() {
+
 }
 // Hide timer on page load
 timerSet.style.display = 'none';
@@ -41,7 +48,6 @@ function timeRemaining() {
             options.style.display ='none';
             mainText.style.display ='block';
             displayScore();
-            submitScore();
          }
     }, 1000);
 }
@@ -164,7 +170,6 @@ function fourthClick() {
    console.log('current score: ' + score + '/3');
 
    displayScore();
-   submitScore();
 }
 // Event Listener to click button to start timer
 buttonClick.addEventListener('click', firstClick);
