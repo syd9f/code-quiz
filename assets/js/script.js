@@ -34,9 +34,13 @@ function sendMessage() {
 function firstQuestion() {
  var question = document.querySelector(".main-title"); //Select h2 in main
  var optionOne = document.createElement('button');
+ optionOne.setAttribute("class","first");
  var optionTwo = document.createElement('button');
+ optionTwo.setAttribute("class","second");
  var optionThree = document.createElement('button');
+ optionThree.setAttribute("class","third");
  var optionFour = document.createElement('button');
+ optionFour.setAttribute("class","fourth");
 
    question.textContent = '1: What does HTML stand for?';
    optionOne.textContent = 'Hyper Text Markup Language';
@@ -48,15 +52,27 @@ function firstQuestion() {
    options.appendChild(optionTwo);
    options.appendChild(optionThree);
    options.appendChild(optionFour);
-   buttonClick.addEventListener('click', secondClick);
+   optionOne.addEventListener('click', secondClick);
 }
 
 // Second question appears after submitting first question
 function secondQuestion() {
    var question = document.querySelector(".main-title"); //Select h2 in main
-   question.textContent = 'Test Question 2';
-   optionOne.textContent = 'Test Option 2';
-   buttonClick.addEventListener('click', thirdClick);
+   var optionOne = document.querySelector(".first");
+   var optionTwo = document.querySelector(".second");
+   var optionThree = document.querySelector(".third");
+   var optionFour = document.querySelector(".fourth");
+
+   question.textContent = '2: Test Question 2';
+   optionOne.textContent = 'Test Option 1';
+   optionTwo.textContent = 'Test Option 2';
+   optionThree.textContent = 'Test Option 3';
+   optionFour.textContent = 'Test Option 4';
+
+   options.appendChild(optionOne);
+   options.appendChild(optionTwo);
+   options.appendChild(optionThree);
+   options.appendChild(optionFour);
 }
 
 // Third Question appears after submitting second question
@@ -87,6 +103,7 @@ function thirdClick() {
 }
 // Event Listener to click button to start timer
 buttonClick.addEventListener('click', firstClick);
+// event listener for correct answer #1
 
 
 
