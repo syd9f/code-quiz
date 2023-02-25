@@ -3,6 +3,7 @@ var buttonClick = document.querySelector(".start"); // Select Button
 var timerSet = document.getElementById("timer"); // Select Timer
 var options = document.querySelector(".options"); // Select ul in main
 
+timerSet.style.display = 'none';
 // Timer that counts down from 60 once start button is clicked 
 function timeRemaining() {
     var timeLeft = 60; // Set starting time
@@ -63,6 +64,7 @@ function thirdQuestion() {
 function firstClick() {
    timeRemaining();
    firstQuestion();
+   timerSet.style.display = 'block';
    this.removeEventListener('click', firstClick);
 }
 
