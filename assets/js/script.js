@@ -3,11 +3,12 @@ var buttonClick = document.querySelector(".start"); // Select Button
 var timerSet = document.getElementById("timer"); // Select Timer
 var options = document.querySelector(".options"); // Select ul in main
 var mainText = document.querySelector('.main-text'); //select p in main
+var mainTitle = document.querySelector('.main-title'); // select h2 in main
 
 timerSet.style.display = 'none';
 // Timer that counts down from 60 once start button is clicked 
 function timeRemaining() {
-    var timeLeft = 60; // Set starting time
+    var timeLeft = 10; // Set starting time
 
     var timerInterval = setInterval(function(event) {
         if (timeLeft > 1) {
@@ -20,6 +21,8 @@ function timeRemaining() {
             timerSet.textContent = '';
             clearInterval(timerInterval);
             sendMessage();
+            mainTitle.textContent = 'Save your score:';
+            options.style.display ='none';
          }
     }, 1000);
 }
@@ -32,64 +35,68 @@ function sendMessage() {
 // QUESTIONS 1 - 5
 // First question that appears when clicking start button
 function firstQuestion() {
- var question = document.querySelector(".main-title"); //Select h2 in main
- var optionOne = document.createElement('button');
- optionOne.setAttribute("class","first");
- var optionTwo = document.createElement('button');
- optionTwo.setAttribute("class","second");
- var optionThree = document.createElement('button');
- optionThree.setAttribute("class","third");
- var optionFour = document.createElement('button');
- optionFour.setAttribute("class","fourth");
+   // create 4 option buttons and assign class attributes
+   var optionOne = document.createElement('button');
+      optionOne.setAttribute("class","first");
+   var optionTwo = document.createElement('button');
+      optionTwo.setAttribute("class","second");
+   var optionThree = document.createElement('button');
+      optionThree.setAttribute("class","third");
+   var optionFour = document.createElement('button');
+      optionFour.setAttribute("class","fourth");
 
-   question.textContent = '1: What does HTML stand for?';
+   //  set button + title text content
+   mainTitle.textContent = '1: What does HTML stand for?';
    optionOne.textContent = 'Hyper Text Markup Language';
    optionTwo.textContent = 'Hyper Text Marketing Language';
    optionThree.textContent = 'Hyper Tool Markup Language';
    optionFour.textContent = 'Anotha one'
 
+   // display buttons to option ul in main
    options.appendChild(optionOne);
    options.appendChild(optionTwo);
    options.appendChild(optionThree);
    options.appendChild(optionFour);
+
+   // assign event listeners for buttons
    optionOne.addEventListener('click', secondClick);
 }
 
 // Second question appears after submitting first question
 function secondQuestion() {
-   var question = document.querySelector(".main-title"); //Select h2 in main
+   // refer to option buttons
    var optionOne = document.querySelector(".first");
    var optionTwo = document.querySelector(".second");
    var optionThree = document.querySelector(".third");
    var optionFour = document.querySelector(".fourth");
-
-   question.textContent = '2: Test Question 2';
+   // set text content
+   mainTitle.textContent = '2: Test Question 2';
    optionOne.textContent = 'Test Option 1';
    optionTwo.textContent = 'Test Option 2';
    optionThree.textContent = 'Test Option 3';
    optionFour.textContent = 'Test Option 4';
-
+   // display buttons in options section
    options.appendChild(optionOne);
    options.appendChild(optionTwo);
    options.appendChild(optionThree);
    options.appendChild(optionFour);
+   // assign event listeners to buttons
+   optionThree.addEventListener('click',thirdClick);
 }
 
 // Third Question appears after submitting second question
 function thirdQuestion() {
-   var question = document.querySelector(".main-title"); //Select h2 in main
-   question.textContent = 'Test Question 3';
+   mainTitle.textContent = 'Test Question 3';
 }
 
 // Functions that contain what will happen on clicks in order
 function firstClick() {
-   timeRemaining();
-   firstQuestion();
    timerSet.style.display = 'block';
    buttonClick.style.display ='none';
    mainText.style.display ='none';
-   this.removeEventListener('click', firstClick);
 
+   timeRemaining();
+   firstQuestion();
 }
 
 function secondClick() {
