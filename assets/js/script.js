@@ -11,7 +11,7 @@ var score = 0; // set starting score as 0
 // set function for calculating final score
 function displayScore() {
    var finalScore = Math.round((100 * score) / 3);
-   mainText.textContent = 'Score: ' + finalScore;
+   mainText.textContent = 'Score: ' + finalScore + '%';
 }
 // Hide timer on page load
 timerSet.style.display = 'none';
