@@ -10,23 +10,22 @@ var form = document.querySelector('.form'); // select form
 // declare variable for keeping score
 var score = 0; // set starting score as 0
 
+
 // calculate final score
 function displayScore() {
    var finalScore = Math.round((100 * score) / 3);
    mainText.textContent = 'Score: ' + finalScore + '%';
-   submitScore();
-}
-// add submit button and user input to form
-function submitScore() {
+
+   // add submit button to form
    var submitButton = document.createElement('button');
       submitButton.setAttribute('class','submit-button');
    submitButton.textContent = 'Submit Score';
    form.appendChild(submitButton);
-   submitButton.addEventListener("click",saveScore);
+   submitButton.addEventListener("click", saveScore)
 }
-// saves score and initials and displays on screen as most recent score
+
 function saveScore() {
-   console.log(score);
+   localStorage.setItem("score", mainText.textContent);
 }
 // TIMER-----------------------------------------------------
 // Hide timer on page load
@@ -185,3 +184,6 @@ function fourthClick() {
 }
 // Event Listener to click button to start timer
 buttonClick.addEventListener('click', firstClick);
+
+// add event listener to the submit button to save score
+// localStorage.setItem("score",score);
