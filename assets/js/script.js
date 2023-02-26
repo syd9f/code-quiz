@@ -16,9 +16,15 @@ function displayScore() {
    var finalScore = Math.round((100 * score) / 3);
    mainText.textContent = 'Score: ' + finalScore + '%';
 
+   // add user initial input to form
+   var userInitials = document.createElement('input');
+   userInitials.setAttribute('type', 'text');
+   userInitials.setAttribute('class','initials')
+   userInitials.setAttribute('placeholder','Enter Initials');
+   form.appendChild(userInitials);
    // add submit button to form
    var submitButton = document.createElement('button');
-      submitButton.setAttribute('class','submit-button');
+   submitButton.setAttribute('class','submit-button');
    submitButton.textContent = 'Submit Score';
    form.appendChild(submitButton);
    submitButton.addEventListener("click", saveScore)
