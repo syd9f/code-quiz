@@ -31,7 +31,9 @@ function displayScore() {
 }
 
 function saveScore() {
+   var initialInput = document.querySelector('.initials');
    localStorage.setItem("score", mainText.textContent);
+   localStorage.setItem("initials", initialInput.value);
 }
 // TIMER-----------------------------------------------------
 // Hide timer on page load
