@@ -39,9 +39,10 @@ function saveScore() {
 // Hide timer on page load
 timerSet.style.display = 'none';
 
+var timeLeft = 30; // Set starting time
+
 // Timer that counts down from 30 once start button is clicked 
 function timeRemaining() {
-   var timeLeft = 30; // Set starting time
 
    var timerInterval = setInterval(function(event) {
       if (timeLeft > 1) {
@@ -166,8 +167,7 @@ function secondClick() {
 
 // First Question answered incorrectly *NOT WORKING, STARTING NEW TIMER ON TOP OF OLD ONE
 function incorrectAnswer(){
-   var timeLeft = timeRemaining(timeLeft) - 5;
-   // timeLeft = timeLeft - 5;
+   timeLeft = timeLeft - 5;
 }
 
 // Second Question answered correctly
