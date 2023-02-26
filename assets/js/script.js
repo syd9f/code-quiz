@@ -120,7 +120,10 @@ function secondQuestion() {
    options.appendChild(optionThree);
    options.appendChild(optionFour);
    // assign event listeners to buttons
+   optionOne.addEventListener('click', incorrectAnswer);
+   optionTwo.addEventListener('click',incorrectAnswer);
    optionThree.addEventListener('click',thirdClick);
+   optionFour.addEventListener('click',incorrectAnswer);
 }
 
 // Third Question appears after submitting second question
@@ -142,8 +145,10 @@ function thirdQuestion() {
    options.appendChild(optionThree);
    options.appendChild(optionFour);
    // assign event listeners to buttons
+   optionOne.addEventListener('click', incorrectAnswer);
    optionTwo.addEventListener('click',fourthClick);
-
+   optionThree.addEventListener('click',incorrectAnswer);
+   optionFour.addEventListener('click',incorrectAnswer);
 }
 
 // ON CLICK FUNCTIONS -------------------------------------------
