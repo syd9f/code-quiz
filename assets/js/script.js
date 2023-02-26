@@ -10,28 +10,35 @@ var form = document.querySelector('.form'); // select form
 // declare variable for keeping score
 var score = 0; // set starting score as 0
 
-
-// calculate final score
 function displayScore() {
+   // calculate final score
    var finalScore = Math.round((100 * score) / 3);
+   // display final score in main p element
    mainText.textContent = 'Score: ' + finalScore + '%';
 
-   // add user initial input to form
+   // create user initial input
    var userInitials = document.createElement('input');
    userInitials.setAttribute('type', 'text');
    userInitials.setAttribute('class','initials')
    userInitials.setAttribute('placeholder','Enter Initials');
-   form.appendChild(userInitials);
-   // add submit button to form
+
+   // create submit button
    var submitButton = document.createElement('button');
    submitButton.setAttribute('class','submit-button');
    submitButton.textContent = 'Submit Score';
+
+   // append input + button to form
+   form.appendChild(userInitials);
    form.appendChild(submitButton);
-   submitButton.addEventListener("click", saveScore)
+
+   // event listener to save score on button click
+   submitButton.addEventListener("click", saveScore);
 }
 
 function saveScore() {
+   // select user input
    var initialInput = document.querySelector('.initials');
+   // store score and input to local storage
    localStorage.setItem("score", mainText.textContent);
    localStorage.setItem("initials", initialInput.value);
 }
@@ -73,13 +80,13 @@ function sendMessage() {
 function firstQuestion() {
    // create 4 option buttons and assign class attributes
    var optionOne = document.createElement('button');
-      optionOne.setAttribute("class","first");
+   optionOne.setAttribute("class","first");
    var optionTwo = document.createElement('button');
-      optionTwo.setAttribute("class","second");
+   optionTwo.setAttribute("class","second");
    var optionThree = document.createElement('button');
-      optionThree.setAttribute("class","third");
+   optionThree.setAttribute("class","third");
    var optionFour = document.createElement('button');
-      optionFour.setAttribute("class","fourth");
+   optionFour.setAttribute("class","fourth");
 
    //  set text content
    mainTitle.textContent = '1: What does HTML stand for?';
@@ -161,6 +168,10 @@ function firstClick() {
    timeRemaining();
    firstQuestion();
 }
+// Questions answered incorrectly remove 5 seconds
+function incorrectAnswer(){
+   timeLeft = timeLeft - 5;
+}
 
 // First Question answered correctly
 function secondClick() {
@@ -168,11 +179,6 @@ function secondClick() {
    score++;
    this.removeEventListener('click', secondClick);
    console.log('current score: ' + score + '/3');
-}
-
-// First Question answered incorrectly *NOT WORKING, STARTING NEW TIMER ON TOP OF OLD ONE
-function incorrectAnswer(){
-   timeLeft = timeLeft - 5;
 }
 
 // Second Question answered correctly
@@ -194,9 +200,7 @@ function fourthClick() {
    console.log('current score: ' + score + '/3');
 
    displayScore();
+   clearInterval(timerInterval);
 }
 // Event Listener to click button to start timer
 buttonClick.addEventListener('click', firstClick);
-
-// add event listener to the submit button to save score
-// localStorage.setItem("score",score);
