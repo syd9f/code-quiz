@@ -93,7 +93,7 @@ function firstQuestion() {
    optionOne.textContent = 'Hyper Text Markup Language';
    optionTwo.textContent = 'Hyper Text Marketing Language';
    optionThree.textContent = 'Hyper Tool Markup Language';
-   optionFour.textContent = 'Anotha one'
+   optionFour.textContent = 'Hot Text Makeup Language'
 
    // display buttons to option ul in main
    options.appendChild(optionOne);
