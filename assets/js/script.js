@@ -116,11 +116,11 @@ function secondQuestion() {
    var optionThree = document.querySelector(".third");
    var optionFour = document.querySelector(".fourth");
    // reset text content
-   mainTitle.textContent = '2: Test Question 2';
-   optionOne.textContent = 'Test Option 1';
-   optionTwo.textContent = 'Test Option 2';
-   optionThree.textContent = 'Test Option 3';
-   optionFour.textContent = 'Test Option 4';
+   mainTitle.textContent = '2: Commonly used data types DO NOT include:';
+   optionOne.textContent = 'strings';
+   optionTwo.textContent = 'booleans';
+   optionThree.textContent = 'alerts';
+   optionFour.textContent = 'numbers';
    // display buttons in options section
    options.appendChild(optionOne);
    options.appendChild(optionTwo);
@@ -128,8 +128,8 @@ function secondQuestion() {
    options.appendChild(optionFour);
    // assign event listeners to buttons
    optionOne.addEventListener('click', incorrectAnswer);
-   optionTwo.addEventListener('click',incorrectAnswer);
-   optionThree.addEventListener('click',thirdClick);
+   optionTwo.addEventListener('click',thirdClick);
+   optionThree.addEventListener('click',incorrectAnswer);
    optionFour.addEventListener('click',incorrectAnswer);
 }
 
@@ -141,11 +141,11 @@ function thirdQuestion() {
    var optionThree = document.querySelector(".third");
    var optionFour = document.querySelector(".fourth");
    // reset text content
-   mainTitle.textContent = '3: Test Question 3';
-   optionOne.textContent = 'Test Option 1 a';
-   optionTwo.textContent = 'Test Option 2a';
-   optionThree.textContent = 'Test Option 3a';
-   optionFour.textContent = 'Test Option 4a';
+   mainTitle.textContent = '3: Arrays in JavaScript can be used to store ____';
+   optionOne.textContent = 'numbers and strings';
+   optionTwo.textContent = 'other arrays';
+   optionThree.textContent = 'booleans';
+   optionFour.textContent = 'all of the above';
    // display buttons in options section
    options.appendChild(optionOne);
    options.appendChild(optionTwo);
@@ -153,9 +153,9 @@ function thirdQuestion() {
    options.appendChild(optionFour);
    // assign event listeners to buttons
    optionOne.addEventListener('click', incorrectAnswer);
-   optionTwo.addEventListener('click',fourthClick);
+   optionTwo.addEventListener('click',incorrectAnswer);
    optionThree.addEventListener('click',incorrectAnswer);
-   optionFour.addEventListener('click',incorrectAnswer);
+   optionFour.addEventListener('click',fourthClick);
 }
 
 // ON CLICK FUNCTIONS -------------------------------------------
