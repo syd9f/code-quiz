@@ -98,3 +98,9 @@ main {
     color: white;
     background-color: darkolivegreen;
 }
+
+footer {
+    color: white;
+    background: black;
+    font-size: 30px;
+}

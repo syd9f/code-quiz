@@ -5,6 +5,8 @@ var options = document.querySelector(".options"); // Select ul in main
 var mainText = document.querySelector('.main-text'); //select p in main
 var mainTitle = document.querySelector('.main-title'); // select h2 in main
 var form = document.querySelector('.form'); // select form
+var foot = document.querySelector('.last-score');
+var footTitle = document.querySelector('.footer-title');
 
 // SCORING----------------------------------------------
 // declare variable for keeping score
@@ -36,20 +38,24 @@ function displayScore() {
 }
 
 function saveScore() {
-   // // select user input
+   // select user input
    var initialInput = document.querySelector('.initials');
-   // // store score and input to local storage
-   // localStorage.setItem("score", mainText.textContent);
-   // localStorage.setItem("initials", initialInput.value);
 
+   // create object to store high score
    var highScore = {
       user: initialInput.value,
       score: mainText.textContent
    };
-
+   // store score and input to local storage
    localStorage.setItem("highScore", JSON.stringify(highScore));
-
 }
+   // display previous score to screen
+   var lastScore = JSON.parse(localStorage.getItem("highScore"));
+   if (lastScore !== null) {
+      footTitle.textContent = "Previous Score:";
+      foot.textContent = "Name: " + lastScore.user + " " + lastScore.score;
+    }
+
 // TIMER-----------------------------------------------------
 // Hide timer on page load
 timerSet.style.display = 'none';
@@ -201,6 +207,7 @@ function thirdClick() {
 function fourthClick() {
    score++;
    timerSet.style.display = 'none';
+   // clearInterval(timerInterval);
    mainText.style.display = 'block';
    options.style.display ='none';
    mainTitle.textContent = 'Save your score:';
@@ -208,7 +215,6 @@ function fourthClick() {
    console.log('current score: ' + score + '/3');
 
    displayScore();
-   // clearInterval(timerInterval);
 }
 // Event Listener to click button to start timer
 buttonClick.addEventListener('click', firstClick);
