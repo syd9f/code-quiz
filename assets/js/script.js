@@ -72,6 +72,8 @@ function timeRemaining() {
       } else if(timeLeft === 1) {
          timerSet.textContent = timeLeft + ' second remaining';
          timeLeft--;
+      } else if(document.querySelector(".end-timer").clicked == true){
+         clearInterval(timerInterval);
       } else {
          timerSet.textContent = '';
          clearInterval(timerInterval);
@@ -154,6 +156,7 @@ function thirdQuestion() {
    var optionTwo = document.querySelector(".second");
    var optionThree = document.querySelector(".third");
    var optionFour = document.querySelector(".fourth");
+   optionFour.setAttribute("class","end-timer")
    // reset text content
    mainTitle.textContent = '3: Arrays in JavaScript can be used to store ____';
    optionOne.textContent = 'numbers and strings';
