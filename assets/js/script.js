@@ -206,14 +206,13 @@ function thirdClick() {
 // Third Question answered correctly
 function fourthClick() {
    score++;
+   timeLeft = 0;
    timerSet.style.display = 'none';
-   // clearInterval(timerInterval);
    mainText.style.display = 'block';
    options.style.display ='none';
    mainTitle.textContent = 'Save your score:';
 
    console.log('current score: ' + score + '/3');
-
    displayScore();
 }
 // Event Listener to click button to start timer
