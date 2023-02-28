@@ -36,11 +36,19 @@ function displayScore() {
 }
 
 function saveScore() {
-   // select user input
+   // // select user input
    var initialInput = document.querySelector('.initials');
-   // store score and input to local storage
-   localStorage.setItem("score", mainText.textContent);
-   localStorage.setItem("initials", initialInput.value);
+   // // store score and input to local storage
+   // localStorage.setItem("score", mainText.textContent);
+   // localStorage.setItem("initials", initialInput.value);
+
+   var highScore = {
+      user: initialInput.value,
+      score: mainText.textContent
+   };
+
+   localStorage.setItem("highScore", JSON.stringify(highScore));
+
 }
 // TIMER-----------------------------------------------------
 // Hide timer on page load
@@ -200,7 +208,7 @@ function fourthClick() {
    console.log('current score: ' + score + '/3');
 
    displayScore();
-   clearInterval(timerInterval);
+   // clearInterval(timerInterval);
 }
 // Event Listener to click button to start timer
 buttonClick.addEventListener('click', firstClick);
