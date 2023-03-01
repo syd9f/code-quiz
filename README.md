@@ -28,9 +28,9 @@ When visiting the webpaage, the user will see:
 
 After clicking start, the first question appears and the timer starts at 30 seconds. Clicking the correct answer moves to the next question, and incorrect answers subtract 5 seconds from the timer. 
 
-![Webpage Recording](./assets/images/codequiz-timeout.mp4)
+The quiz ends when either the last question is clicked or the time runs out.
 
-The quiz ends when either the last question is clicked or 
+![Webpage Recording](./assets/images/codequiz-timeout.mp4)
 
 When the submit score button is clicked, the page will reset and the most recent score will display.
 
