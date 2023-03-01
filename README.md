@@ -22,6 +22,20 @@ WHEN the game is over
 THEN I can save my initials and score
 ```
 ## Usage
+When visiting the webpaage, the user will see:
+
+![Webpage Screenshot](./images/codequiz-firstopen.png)
+
+After clicking start, the first question appears and the timer starts. Clicking the correct answer moves to the next question, and incorrect answers subtract 5 seconds from the timer. 
+
+![Webpage Recording](./images/codequiz-timeout.mp4)
+
+When the submit score button is clicked, the page will reset and the most recent score will display.
+
+![Webpage Screenshot](./images/codequiz-savescore.png)
+
+*There is a known bug when the user completes the questions before the timer runs out, resulting in the displayScore function running twice. The first button generated will still save the score. Currently working on fix.*
+
 
 ## Credits
 CSS Reset file : https://meyerweb.com/eric/tools/css/reset/

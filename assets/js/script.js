@@ -7,6 +7,7 @@ var mainTitle = document.querySelector('.main-title'); // select h2 in main
 var form = document.querySelector('.form'); // select form
 var foot = document.querySelector('.last-score');
 var footTitle = document.querySelector('.footer-title');
+let timerInterval;
 
 // SCORING----------------------------------------------
 // declare variable for keeping score
@@ -17,22 +18,18 @@ function displayScore() {
    var finalScore = Math.round((100 * score) / 3);
    // display final score in main p element
    mainText.textContent = 'Score: ' + finalScore + '%';
-
    // create user initial input
    var userInitials = document.createElement('input');
    userInitials.setAttribute('type', 'text');
    userInitials.setAttribute('class','initials')
    userInitials.setAttribute('placeholder','Enter Initials');
-
    // create submit button
    var submitButton = document.createElement('button');
    submitButton.setAttribute('class','submit-button');
    submitButton.textContent = 'Submit Score';
-
    // append input + button to form
    form.appendChild(userInitials);
    form.appendChild(submitButton);
-
    // event listener to save score on button click
    submitButton.addEventListener("click", saveScore);
 }
@@ -48,13 +45,13 @@ function saveScore() {
    };
    // store score and input to local storage
    localStorage.setItem("highScore", JSON.stringify(highScore));
-}
+} 
    // display previous score to screen
-   var lastScore = JSON.parse(localStorage.getItem("highScore"));
-   if (lastScore !== null) {
-      footTitle.textContent = "Previous Score:";
-      foot.textContent = "Name: " + lastScore.user + " " + lastScore.score;
-    }
+var lastScore = JSON.parse(localStorage.getItem("highScore"));
+if (lastScore !== null) {
+   footTitle.textContent = "Previous Score:";
+   foot.textContent = "Name: " + lastScore.user + " " + lastScore.score;
+}
 
 // TIMER-----------------------------------------------------
 // Hide timer on page load
@@ -64,7 +61,7 @@ var timeLeft = 30; // Set starting time
 
 // Timer that counts down from 30 once start button is clicked 
 function timeRemaining() {
-
+   
    var timerInterval = setInterval(function(event) {
       if (timeLeft > 1) {
          timerSet.textContent = timeLeft + ' seconds remaining';
@@ -72,8 +69,8 @@ function timeRemaining() {
       } else if(timeLeft === 1) {
          timerSet.textContent = timeLeft + ' second remaining';
          timeLeft--;
-      } else if(document.querySelector(".end-timer").clicked == true){
-         clearInterval(timerInterval);
+      // } else if(document.querySelector(".end-timer").clicked === true){
+      //    clearInterval(timerInterval);
       } else {
          timerSet.textContent = '';
          clearInterval(timerInterval);
@@ -217,6 +214,14 @@ function fourthClick() {
 
    console.log('current score: ' + score + '/3');
    displayScore();
+   clearInterval(timerInterval);
 }
+
+// function stopTimer() {
+//    if(document.querySelector(".end-timer").clicked === true){
+//       clearInterval(timerInterval);
+//       return timerInterval(fourthClick);
+//    } 
+// }
 // Event Listener to click button to start timer
 buttonClick.addEventListener('click', firstClick);
