@@ -24,17 +24,17 @@ THEN I can save my initials and score
 ## Usage
 When visiting the webpaage, the user will see:
 
-![Webpage Screenshot](./images/codequiz-firstopen.png)
+![Webpage Screenshot](./assets/images/codequiz-firstopen.png)
 
-After clicking start, the first question appears and the timer starts. Clicking the correct answer moves to the next question, and incorrect answers subtract 5 seconds from the timer. 
+After clicking start, the first question appears and the timer starts at 30 seconds. Clicking the correct answer moves to the next question, and incorrect answers subtract 5 seconds from the timer. 
 
-![Webpage Recording](./images/codequiz-timeout.mp4)
+![Webpage Recording](./assets/images/codequiz-timeout.mp4)
+
+The quiz ends when either the last question is clicked or 
 
 When the submit score button is clicked, the page will reset and the most recent score will display.
 
-![Webpage Screenshot](./images/codequiz-savescore.png)
-
-*There is a known bug when the user completes the questions before the timer runs out, resulting in the displayScore function running twice. The first button generated will still save the score. Currently working on fix.*
+![Webpage Screenshot](./assets/images/codequiz-savescore.png)
 
 
 ## Credits

@@ -213,8 +213,8 @@ function fourthClick() {
    mainTitle.textContent = 'Save your score:';
 
    console.log('current score: ' + score + '/3');
-   displayScore();
    clearInterval(timerInterval);
+   timerInterval.preventDefault();
 }
 
 // function stopTimer() {
